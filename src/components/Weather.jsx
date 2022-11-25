@@ -4,7 +4,7 @@ const Weather = ({weather}) => {
   console.log({weather});
 
 
-const [temp, setTemp] = useState(Number(weather?.main.temp).toFixed(2) )
+const [temp, setTemp] = useState(Number(weather?.main.temp).toFixed(3) )
 const [hack, setHack] = useState(false)
 const [hackF, setHackF] = useState(false)
 const [cel, setCel] = useState(temp-273.15)
