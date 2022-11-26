@@ -56,13 +56,13 @@ const [far, setFar] = useState((temp - 273.15)*9/5 + 32)
           {setHackF(!hackF)}}>
           Degrees Farenheit
           <br />
-         <span className="temp"> {hackF?`${far.toFixed(2)}°F`:''}</span>
+         <span className="temp"> {hackF?`${far?.toFixed(2)}°F`:''}</span>
         </button>
         <button className="btn" onClick={ ()=>
           {setHack(!hack)}}>
           Degrees Celsius
           <br />
-         <span className="temp"> {hack?`${cel.toFixed(2)}°C`:''}</span>
+         <span className="temp"> {hack?`${cel?.toFixed(2)}°C`:''}</span>
         </button>
     </article>
   );
