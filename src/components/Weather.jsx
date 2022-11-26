@@ -4,7 +4,7 @@ const Weather = ({weather}) => {
   console.log({weather});
 
 
-const [temp, setTemp] = useState(Number(weather?.main.temp).toFixed(4) )
+const [temp, setTemp] = useState(Number(weather?.main.temp).toFixed(2) )
 const [hack, setHack] = useState(false)
 const [hackF, setHackF] = useState(false)
 const [cel, setCel] = useState(temp-273.15)
@@ -56,13 +56,13 @@ const [far, setFar] = useState((temp - 273.15)*9/5 + 32)
           {setHackF(!hackF)}}>
           Degrees Farenheit
           <br />
-         <span className="temp"> {hackF?`${far?.toFixed(2)}°F`:''}</span>
+         <span className="temp"> {hackF?`${far.toFixed(2)}°F`:''}</span>
         </button>
         <button className="btn" onClick={ ()=>
           {setHack(!hack)}}>
           Degrees Celsius
           <br />
-         <span className="temp"> {hack?`${cel?.toFixed(2)}°C`:''}</span>
+         <span className="temp"> {hack?`${cel.toFixed(2)}°C`:''}</span>
         </button>
     </article>
   );
