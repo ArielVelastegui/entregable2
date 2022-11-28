@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-const Weather = ({weather}) => {
+const Weather = ({weather,temp}) => {
   console.log({weather});
+  
 
 
-const [temp, setTemp] = useState(Number(weather?.main.temp).toFixed(2) )
 const [hack, setHack] = useState(false)
 const [hackF, setHackF] = useState(false)
-const [cel, setCel] = useState(temp-273.15)
-const [far, setFar] = useState((temp - 273.15)*9/5 + 32)
 
-
+temp?.cel>17?"card":"cold"
 
 
   return (
-    <article className="card">
+    <article className={temp?.cel>17?"card":"cold"}>
       <header>
         <h1 className="card_title">Weather App</h1>
         <h2 className="card_subtitle">
@@ -56,13 +54,13 @@ const [far, setFar] = useState((temp - 273.15)*9/5 + 32)
           {setHackF(!hackF)}}>
           Degrees Farenheit
           <br />
-         <span className="temp"> {hackF?`${far.toFixed(2)}°F`:''}</span>
+         <span className="temp"> {hackF?`${temp?.far}°F`:''}</span>
         </button>
         <button className="btn" onClick={ ()=>
           {setHack(!hack)}}>
           Degrees Celsius
           <br />
-         <span className="temp"> {hack?`${cel.toFixed(2)}°C`:''}</span>
+         <span className="temp"> {hack?`${temp?.cel }°C`:''}</span>
         </button>
     </article>
   );
